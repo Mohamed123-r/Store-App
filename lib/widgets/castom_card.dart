@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 
+// ignore: must_be_immutable
 class CastomCard extends StatelessWidget {
-  const CastomCard({super.key});
+  CastomCard({super.key, required this.product});
+
+  ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +43,10 @@ class CastomCard extends StatelessWidget {
         Positioned(
           bottom: 60,
           child: Image.network(
+            product.image,
               width: 150,
               height: 100,
-              'https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png'),
+              ),
         ),
       ],
     );
