@@ -23,13 +23,13 @@ class CastomCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  product.title,
+                  'data',
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(product.price as String),
+                    Text('dfvd'),
                     Icon(
                       Icons.favorite,
                       color: Colors.red,
@@ -44,9 +44,9 @@ class CastomCard extends StatelessWidget {
           bottom: 60,
           child: Image.network(
             product.image,
-            width: 150,
-            height: 100,
-          ),
+              width: 150,
+              height: 100,
+              ),
         ),
       ],
     );
