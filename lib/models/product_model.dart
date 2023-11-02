@@ -24,7 +24,7 @@ class ProductModel {
       price: jsonData['price'],
       description: jsonData['description'],
       category: jsonData['category'],
-      image: jsonData['imaged'],
+      image: jsonData['image'],
       rating: RatingModel.fromJson(jsonData['rating']),
     );
   }

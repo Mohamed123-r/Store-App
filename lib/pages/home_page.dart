@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
               future: GetAllProducts().getAllProduct(),
 
               builder: (context, snapshot) {
-                if (snapshot.hasData) {
+                // if (snapshot.hasData) {
                   List<ProductModel> pro = snapshot.data!;
                   return GridView.builder(
                     itemCount: pro.length,
@@ -54,11 +54,11 @@ class HomePage extends StatelessWidget {
                           product: pro[index],
                         );
                       });
-                } else {
-                return  Center(
-                    child: const CircularProgressIndicator(),
-                  );
-                }
+                // } else {
+                // return  Center(
+                //     child:  CircularProgressIndicator(),
+                //   );
+                // }
               })),
     );
   }
