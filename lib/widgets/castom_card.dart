@@ -23,14 +23,21 @@ class CastomCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'data',
-                  style: TextStyle(color: Colors.grey, fontSize: 15),
+                  product.title,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('dfvd'),
-                    Icon(
+                    Text(
+                      r'$ ' '${product.price}',
+                      style: TextStyle(),
+                    ),
+                    const Icon(
                       Icons.favorite,
                       color: Colors.red,
                     )
@@ -42,11 +49,12 @@ class CastomCard extends StatelessWidget {
         ),
         Positioned(
           bottom: 60,
+          right: 10,
           child: Image.network(
             product.image,
-              width: 150,
-              height: 100,
-              ),
+            width: 100,
+            height: 100,
+          ),
         ),
       ],
     );
