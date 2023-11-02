@@ -10,7 +10,8 @@ class Api {
       return response.data;
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode}');
+        'there is a problem with status code ${response.statusCode}',
+      );
     }
   }
 
@@ -21,7 +22,8 @@ class Api {
       return response.data;
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode}');
+        'there is a problem with status code ${response.statusCode}',
+      );
     }
   }
 
@@ -32,7 +34,8 @@ class Api {
       return response.data;
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode}');
+        'there is a problem with status code ${response.statusCode}',
+      );
     }
   }
 }
