@@ -1,21 +1,25 @@
+
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
+import 'package:store_app/services/update_product.dart';
 import 'package:store_app/widgets/button_update_product.dart';
 import 'package:store_app/widgets/textform_updateproduct.dart';
 
 // ignore: must_be_immutable
 class UpdateProduct extends StatelessWidget {
-   UpdateProduct({super.key});
+  UpdateProduct({super.key});
 
   String? name, dec, price, image;
 
   @override
   Widget build(BuildContext context) {
+    ProductModel product = ModalRoute.of(context)!.settings.arguments as ProductModel;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text(
+        title: const Text(
           'Update Product',
           style: TextStyle(color: Colors.black),
         ),
@@ -24,50 +28,61 @@ class UpdateProduct extends StatelessWidget {
         child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              children: [ SizedBox(
-                height: 120,
-              ),
+              children: [
+                const SizedBox(
+                  height: 120,
+                ),
                 TextFormUpdateProduct(
                   onChange: (data) {
                     name = data;
                   },
-                  label: Text('Product Name'),
+                  label: const Text('Product Name'),
                   inputType: TextInputType.text,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 TextFormUpdateProduct(
                   onChange: (data) {
                     dec = data;
                   },
-                  label: Text('description'),
+                  label: const Text('description'),
                   inputType: TextInputType.text,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 TextFormUpdateProduct(
                   onChange: (data) {
                     price = data;
                   },
-                  label: Text('Price'),
+                  label: const Text('Price'),
                   inputType: TextInputType.number,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 TextFormUpdateProduct(
                   onChange: (data) {
                     image = data;
                   },
-                  label: Text('Image'),
+                  label: const Text('Image'),
                   inputType: TextInputType.text,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
-              ButtonUpdateProduct(),
+                ButtonUpdateProduct(
+                  text: 'Update',
+                  onTab: () {
+                    UpdateProductSer().updateProduct(
+                        title: name!,
+                        price: price!,
+                        description: dec!,
+                        image: image!,
+                        category: product.category);
+                  },
+                ),
               ],
             )),
       ),

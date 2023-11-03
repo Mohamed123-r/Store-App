@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ButtonUpdateProduct extends StatelessWidget {
-  const ButtonUpdateProduct({super.key});
+  ButtonUpdateProduct({super.key, required this.text, required this.onTab});
+
+  String text;
+
+  void Function() onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +15,7 @@ class ButtonUpdateProduct extends StatelessWidget {
         minWidth: double.infinity,
         color: Colors.blue,
         textColor: Colors.white,
-        onPressed: () {},
-        child: Text('Update'));
+        onPressed: onTab,
+        child: Text(text));
   }
 }

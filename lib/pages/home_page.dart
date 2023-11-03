@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_cart,
                 color: Colors.black,
               ))
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'New Trend',
           style: TextStyle(color: Colors.black),
         ),
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
                 ) ,
                   itemCount: pro.length,
                   clipBehavior: Clip.none,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 1.5,
                     crossAxisSpacing: 10,
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                     );
                   });
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }

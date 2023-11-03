@@ -12,9 +12,14 @@ class CastomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return UpdateProduct();
-        }));
+        Navigator.of(context).pushNamed(
+          MaterialPageRoute(
+            builder: (context) {
+              return UpdateProduct();
+            },
+          ) as String,
+          arguments: product,
+        );
       },
       child: Stack(
         clipBehavior: Clip.none,
@@ -42,7 +47,7 @@ class CastomCard extends StatelessWidget {
                     children: [
                       Text(
                         r'$ ' '${product.price}',
-                        style: TextStyle(),
+                        style: const TextStyle(),
                       ),
                       const Icon(
                         Icons.favorite,
